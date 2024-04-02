@@ -3,39 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
     <title>BOGGLE</title>
 </head>
 <body>
-    <h1>Boggle!</h1>
-    <h3>Earn a point for every valid word you find from the grid!</h3>
-    <hr>
-    <section class = "score-board">
-        <p>Times Played: <b class = "num_plays">{{num_plays}}</b></p>
-        <p>Highscore: <b class = "highscore">{{highscore}}</b></p>
-        <p>Score: <b class = "score"></b></p>
-        <p>Timer: <b class = "timer"></b></p>
-    </section>
-    <section class = "board">
-        <table>
-            {% for row in board %}
-            <tr>
-                {% for letter in row %}
-                <td>{{letter}}</td>
-                {% endfor %}
-            </tr>
-            {% endfor %}
-        </table>
-    </section>
+    <h1>BOGGLE!</h1>
+    <p id = 'instructions'>Instructions: Earn a point for every valid word you find from the grid. Words can be made in any direction.</p>
 
+    <div class = 'container'>
+        <section class = "score-board">
+            <p>Times Played: <b class = "num_plays">{{num_plays}}</b></p>
+            <p>Highscore: <b class = "highscore">{{highscore}}</b></p>
+            <p>Score: <b class = "score"></b></p>
+            <p>Timer: <b class = "timer"></b></p>
+        </section>
+
+        <section class = "board">
+            <table>
+                {% for row in board %}
+                <tr>
+                    {% for letter in row %}
+                    <td>{{letter}}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </section>
+</div>
     <section class = "word-form">
-        <form action = "#" id = "submit-word-form">
+        <form id = "submit-word-form">
             <input required type = "text" name = "guess" id = "guess">
-            <button type = 'submit'>Submit Guess</button>
+            <button id = 'submit-button' type = 'submit'>Submit Guess</button>
         </form>
     </section>
 
     <section class = "js">
-        <p class = "response"></p>
+        <p id = "response"></p>
     </section>
 
     <script src="https://unpkg.com/jquery"></script>
