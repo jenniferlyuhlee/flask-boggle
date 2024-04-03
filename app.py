@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, session, jsonify
+from flask import Flask, request, render_template, redirect, session, jsonify
 from boggle import Boggle
 
 app = Flask(__name__)
@@ -45,4 +45,10 @@ def end_game():
     #returns true if highscore was broken
     new_highscore = (score > highscore)
     return jsonify({"new_highscore": new_highscore})
+
+
+@app.route('/play-again', methods=["POST"])
+def play_again():
+    """Redirects user to play again"""
+    return redirect ('/')
 

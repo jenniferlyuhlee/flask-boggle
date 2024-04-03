@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>BOGGLE!</h1>
-    <p id = 'instructions'>Instructions: Earn a point for every valid word you find from the grid. Words can be made in any direction.</p>
+    <p id = 'instructions'>Instructions: Earn a point for every valid word you find from the grid. Words can be made by connecting letters in any direction.</p>
 
     <div class = 'container'>
         <section class = "score-board">
@@ -39,7 +39,12 @@
 
     <section class = "js">
         <p id = "response"></p>
+        <form action="/play-again" method="post">
+            <button id = "play-again" class="hidden" type="submit">Play Again</button>
+        </form>
+        <ol id = "words"></ol>
     </section>
+
 
     <script src="https://unpkg.com/jquery"></script>
     <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>

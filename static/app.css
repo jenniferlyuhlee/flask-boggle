@@ -66,16 +66,20 @@ button{
     border-radius: 5px;
 }
 
-button:hover{
+#submit-button:hover{
     cursor: pointer;
 }
 
-button:disabled{
+#submit-button:disabled{
     background-color: lightslategray;
     cursor: not-allowed;
 }
 
 /* Response dynamic coloring*/
+#response{
+    font-family:'Courier New', Courier, monospace;
+}
+
 .invalid{
     color: red;
 }
@@ -87,4 +91,28 @@ button:disabled{
 .finish{
     font-size: 1.5rem;
     color: rgb(255, 213, 77);
+    text-shadow: 1px 1px 0 black;
 }
+
+/* Play again */
+.hidden{
+    display: none;
+}
+
+#play-again:hover{
+    cursor: pointer;
+    color:white;
+    background-color: darkgreen;
+}
+
+/* List of valid guesses */
+.js{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#words{
+    padding:0;
+}
+
