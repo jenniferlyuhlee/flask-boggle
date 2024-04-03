@@ -49,7 +49,6 @@ class BoggleGame {
     async handleGuess(evt){
         evt.preventDefault();
         let guess = $("#guess").val();
-        console.log(guess);
         const resp = await axios.get('/check-word', {params: {guess}});
         
         //checks for word validity from server response
